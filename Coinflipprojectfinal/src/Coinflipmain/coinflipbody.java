@@ -78,7 +78,8 @@ public class coinflipbody {
 		System.out.println("2.) You will then be given the option of choosing Heads or Tails. You do this by entering either 1 for Heads or 2 for Tails\n");
 		System.out.println("3.) After you enter your choice, you will then be propted to enter the wager you wish to bet out of the intial money.\n");
 		System.out.println("4.) The game will generate a random outcome for the coin toss, depending on that outcome you will either win or lose that coin flip.\n");
-		System.out.println("5.) If you win, you will recieve double the wager you placed. If you loss you will lose you will recieve nothing.\nYour new balance will be presented, and you will continue to play until no money remains in your balance.\n\n");
+		System.out.println("5.) If you win, you will recieve double the wager you placed. If you lose you will lose you will recieve nothing and the wager placed will be subtracted from your money pool.\nYour new balance will be presented.\n");
+		System.out.println("6.) You will then be given an option to keep playing or cash out. If you cash out, the game ends and you will see your total winnings for that game\n\n");
 		//System out print lines that display the game rules
 
 		System.out.println(name + ", are you flippin ready?\n");
@@ -190,7 +191,7 @@ public class coinflipbody {
 		if (betchoice == n1) {
 			System.out.println("\nAwesome! You won $" + pot + "\n\nYour new balance is $" + win );
 			currency = win;
-			betchoice();
+			cashout();
 			//If statement that compares the user input from "betchoice" to check if it is equal to random value "n1"
 			//If user choice equals random result, displays winnings, adds winnings to currency value to display new balance
 			//Returns to the betchoice() method
@@ -207,19 +208,35 @@ public class coinflipbody {
 				exitgame();}
 			//nested if statement checks to see if the amount of money lost brings the balance of currency to 0, retruns to exitgame() method
 
-			else {betchoice();}
+			else {cashout();}
 			//nested else statement returns to the betchoice() method
 		}
 	}
+	public static void cashout() {
 
+		System.out.println("\nKeep Playing (1) or Cash out (2):");
+		//prompts user to chose between keep playing or cash out
+
+		int response;
+		//declares "response" as new integer variable
+
+		response = input.nextInt();
+		//set response equal to next integer input from scanner
+
+		if (response>=2) {
+			System.out.println("\nCongrats, " + name + "!" + "\n\nYour total winning's for this game is: $" + currency);
+			exitgame();
+			//if statement that will display winnings if the user chooses to cash out
+		}
+		else {betchoice();}
+		//else statement that returns to "betchoice()" method if the user wishes to continue playing
+	}
 	public static void exitgame() {
 		//Method that is used to exit the game, ask user if they would like to play again if they lost all their currency
 
 		int answer1;
 		//Declares "answer1" to be a new integer variable
 
-		System.out.println("\nThanks for playing Double or Nothing!");
-		//Print line displaying thank you for playing Double or Nothing
 
 		System.out.println("\n\nDo you wish to play a new game?");
 		//Prompts user to answer if they wish to play a new game
@@ -236,8 +253,13 @@ public class coinflipbody {
 			//If statement that compares user input for "answer1" to 1 to see if they wish to play another game
 			//If true returns to currency() method
 		}
-		else { System.out.println("\n\nHave a Great Day, " + name + "!" + "\n\nCome back anytime! :)");
-		//Else statement that displays have a great day plus the string "name" if user enters anything other than 1 for "answer1" input 
+		else { 
+			//Else statement that displays have a great day plus the string "name" if user enters anything other than 1 for "answer1" input
+			System.out.println("\nThanks for playing Double or Nothing, " + name +"!");
+			//Print line displaying thank you for playing Double or Nothing with string "name" inserted 
+			System.out.println("\nHave a Great Day!");
+			//Print line displaying have a great day
+
 		}
 
 	}
