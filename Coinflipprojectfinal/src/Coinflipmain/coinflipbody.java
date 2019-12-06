@@ -4,7 +4,7 @@ import java.util.Random;
 //Java utility used to create a random number
 
 import java.util.Scanner;
-//Java utility used to scan for user input and store that data into a variable
+//Java utility that generates random outcomes
 
 public class coinflipbody {
 	//Public class containing all the methods used for the Double or Nothing game
