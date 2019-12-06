@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="Coinflipmain.Mainclass" project="Coinflipprojectfinal" 
     file="/Coinflipprojectfinal/src/Coinflipmain/Mainclass.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="260" width="290" x="100" y="94"/>    
+    <position height="260" width="290" x="136" y="95"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      

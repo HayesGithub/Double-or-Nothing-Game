@@ -143,9 +143,9 @@ public class coinflipbody {
 
 		if(betcurrency>currency) {
 			System.out.println("You dont have enough to bet that much!");
-			currency();
+			betchoice();
 			//If statement that checks if the bet currency is less than the amount of currency the user has
-			//If true the program displays they don't have enough to bet this much, returns to currency() method
+			//If true the program displays they don't have enough to bet this much, returns to betchoice() method
 		}
 
 		else if (currency == 0) {
@@ -194,7 +194,7 @@ public class coinflipbody {
 			cashout();
 			//If statement that compares the user input from "betchoice" to check if it is equal to random value "n1"
 			//If user choice equals random result, displays winnings, adds winnings to currency value to display new balance
-			//Returns to the betchoice() method
+			//Returns to the cashout() method
 		}
 
 		else {
@@ -209,9 +209,10 @@ public class coinflipbody {
 			//nested if statement checks to see if the amount of money lost brings the balance of currency to 0, retruns to exitgame() method
 
 			else {cashout();}
-			//nested else statement returns to the betchoice() method
+			//nested else statement returns to the cashout() method
 		}
 	}
+	
 	public static void cashout() {
 
 		System.out.println("\nKeep Playing (1) or Cash out (2):");
@@ -226,11 +227,12 @@ public class coinflipbody {
 		if (response>=2) {
 			System.out.println("\nCongrats, " + name + "!" + "\n\nYour total winning's for this game is: $" + currency);
 			exitgame();
-			//if statement that will display winnings if the user chooses to cash out
+			//if statement that will display winnings if the user chooses to cash out by inputing a value >=2 , then returns to "exitgame()" method
 		}
 		else {betchoice();}
 		//else statement that returns to "betchoice()" method if the user wishes to continue playing
 	}
+	
 	public static void exitgame() {
 		//Method that is used to exit the game, ask user if they would like to play again if they lost all their currency
 
